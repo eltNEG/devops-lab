@@ -6,19 +6,24 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "cross-env": "^5.2.0",
     "express": "^4.16.4"
   },
   "scripts": {
     "build": "babel ./src -d build",
     "dev-start": "nodemon --exec npx babel-node --presets=env ./src/index.js",
     "prod-start": "node ./build/index.js",
-    "start": "npm run build && npm run prod-start"
+    "start": "npm run build && npm run prod-start",
+    "test": "mocha ./src/tests --timeout 15000 --require babel-polyfill --require babel-register --exit"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.7.0"
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
+    "mocha": "^5.2.0"
   }
 }

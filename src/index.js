@@ -7,7 +7,7 @@ const port = process.env.PORT || 3000;
 app.route("/").get((req, res) => {
   res.status(200).json({
     success: true,
-    msg: "eltneg's dev ops test project"
+    message: "eltneg's dev ops test project"
   });
 });
 
@@ -15,7 +15,7 @@ app.route("/").get((req, res) => {
 app.route("/ping").get((req, res) => {
   res.status(200).json({
     success: true,
-    msg: "pong"
+    message: "pong"
   });
 });
 
