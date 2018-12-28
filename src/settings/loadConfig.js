@@ -1,12 +1,8 @@
-import config from "./config.json";
+import dotenv from "dotenv";
 
-export default (environment, set = false) => {
-  if (set) {
-    process.env.NODE_ENV = environment;
+export default (environment) => {
+  dotenv.config({ silent: true });
+  if(environment !== 'PRODUCTION'){
+    process.env.PORT = process.env[`${environment}_PORT`]
   }
-  const envConfig = config[environment];
-  if (envConfig) {
-    console.debug("environment: ", environment);
-    Object.keys(envConfig).forEach(key => (process.env[key] = envConfig[key]));
-  }
-};
+}

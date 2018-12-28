@@ -3,7 +3,7 @@ import chai from "chai";
 import { expect, assert } from "chai";
 import server from "../index";
 
-const baseUrl = "http://localhost:3000";
+const baseUrl = `http://localhost:${process.env.PORT}`;
 chai.use(chaiHttp);
 
 describe("Server", () => {
