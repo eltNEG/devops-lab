@@ -1,10 +1,10 @@
-import chaihttp from "chai-http";
+import chaiHttp from "chai-http";
 import chai from "chai";
 import { expect, assert } from "chai";
 import server from "../index";
 
 const baseUrl = "http://localhost:3000";
-chai.use(chaihttp);
+chai.use(chaiHttp);
 
 describe("Server", () => {
   after(() => {

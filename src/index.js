@@ -1,5 +1,7 @@
 import express from "express";
+import loadConfig from './settings/loadConfig'
 
+loadConfig(process.env.NODE_ENV)
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -28,7 +30,5 @@ app.route("*").all((req, res) =>
 );
 
 const server = app.listen(port, () => console.debug(`"app running on port ${port}"`));
-
-// console.log(`Serving app on: http://localhost:${port}`);
 
 export default server;

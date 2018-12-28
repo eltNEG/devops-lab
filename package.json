@@ -11,10 +11,10 @@
   },
   "scripts": {
     "build": "babel ./src -d build",
-    "dev-start": "nodemon --exec npx babel-node --presets=env ./src/index.js",
-    "prod-start": "node ./build/index.js",
+    "dev-start": "cross-env NODE_ENV=DEVELOPMENT nodemon --exec npx babel-node --presets=env ./src/index.js",
+    "prod-start": "cross-env NODE_ENV=PRODUCTION node ./build/index.js",
     "start": "npm run build && npm run prod-start",
-    "test": "mocha ./src/tests --timeout 15000 --require babel-polyfill --require babel-register --exit"
+    "test": "cross-env NODE_ENV=TEST mocha ./src/tests --timeout 15000 --require babel-polyfill --require babel-register --exit"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
