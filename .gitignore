@@ -2,3 +2,6 @@ node_modules/
 build/
 src/settings/config.json
 src/settings/loadConfig.1.js
+.nyc_output
+coverage/
+.coveralls.yml

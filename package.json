@@ -11,14 +11,15 @@
     "express": "^4.16.4"
   },
   "scripts": {
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "lint": "yarn run eslint --fix",
     "eslint": "npx eslint ./src",
     "build": "yarn run clean && babel ./src -d build --ignore src/tests",
-    "clean": "rm -rf build",
+    "clean": "rm -rf build coverage",
     "dev-start": "cross-env NODE_ENV=DEVELOPMENT nodemon --exec npx babel-node --presets=env ./src/index.js",
     "prod-start": "cross-env NODE_ENV=PRODUCTION node ./build/index.js",
     "start": "yarn run build && npm run prod-start",
-    "test": "yarn run eslint && cross-env NODE_ENV=TEST  mocha ./src/tests --timeout 15000 --require babel-polyfill --require babel-register --exit"
+    "test": "yarn run eslint && cross-env NODE_ENV=TEST nyc --reporter=html --reporter=text  mocha ./src/tests --timeout 15000 --require babel-polyfill --require babel-register --exit"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -28,9 +29,12 @@
     "babel-preset-env": "^1.7.0",
     "chai": "^4.2.0",
     "chai-http": "^4.2.0",
+    "coveralls": "^3.0.2",
     "eslint": "^5.11.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
-    "mocha": "^5.2.0"
+    "istanbul": "^0.4.5",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0"
   }
 }

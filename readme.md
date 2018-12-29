@@ -1,3 +1,3 @@
 # My playground project to test various dev ops operations
 
-[![Build Status](https://travis-ci.org/eltNEG/devops-lab.svg?branch=master)](https://travis-ci.org/eltNEG/devops-lab) [![Reviewed by Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com)
+[![Build Status](https://travis-ci.org/eltNEG/devops-lab.svg?branch=master)](https://travis-ci.org/eltNEG/devops-lab) [![Reviewed by Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com) [![Coverage Status](https://coveralls.io/repos/github/eltNEG/devops-lab/badge.svg?branch=master)](https://coveralls.io/github/eltNEG/devops-lab?branch=master)

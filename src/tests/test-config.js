@@ -9,5 +9,11 @@ describe('Node Environment', () => {
       assert(typeof process.env.PORT, 'number');
       done();
     });
+    it('returns environment configuration for environment', (done) => {
+      loadConfig('PRODUCTION');
+      assert(typeof process.env.NODE_ENV, 'string');
+      assert(typeof process.env.PORT, 'number');
+      done();
+    });
   });
 });
