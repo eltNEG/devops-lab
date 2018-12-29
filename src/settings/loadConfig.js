@@ -1,8 +1,11 @@
-import dotenv from "dotenv";
+import dotenv from 'dotenv';
 
-export default (environment) => {
+const loadConfig = (environment) => {
   dotenv.config({ silent: true });
-  if(environment !== 'PRODUCTION'){
-    process.env.PORT = process.env[`${environment}_PORT`]
+  if (environment !== 'PRODUCTION') {
+    process.env.PORT = process.env[`${environment}_PORT`];
+    console.log('Environment: ', environment);
   }
-}
+};
+
+export default loadConfig;
